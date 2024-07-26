@@ -1,0 +1,86 @@
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .level-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2d2d2d;
+  }
+
+  .points {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d2d2d;
+  }
+
+  .points-change {
+    font-size: 14px;
+  }
+
+  .detail-link {
+    font-size: 14px;
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+
+  .rating-circle {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+  }
+
+  .rating-circle svg {
+    transform: rotate(-90deg);
+  }
+
+  .rating-circle circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
+
+  .rating-circle .background-circle {
+    stroke: #e6e6e6;
+  }
+
+  .rating-circle .progress-circle {
+    stroke: #00c853;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1.5s ease-in-out;
+  }
+
+  .rating-value-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .rating-value {
+    font-size: 27px;
+    font-weight: bold;
+    color: #2d2d2d;
+  }
+
+  .rating-text {
+    font-size: 14px;
+    color: #8b8b8b;
+  }
+
+  .progress-bar {
+    background-color: #1d4ed8;
+    transition: width 2s ease-in-out;
+  }
+
+  .bg-warning {
+    background-color: #f0ad4e;
+  }

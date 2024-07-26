@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+  <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Fonts and icons -->
+  <!-- mulis -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- mulis -->
+  <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    WebFont.load({
+      google: { families: ["Public Sans:300,400,500,600,700"] },
+      custom: {
+        families: [
+          "Font Awesome 5 Solid",
+          "Font Awesome 5 Regular",
+          "Font Awesome 5 Brands",
+          "simple-line-icons",
+        ],
+        urls: ["assets/css/fonts.min.css"],
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      },
+    });
+  </script>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins.min.css" />
+  <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+  <link rel="stylesheet" href="tables/assets/css/junior-grafik.css">
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link rel="stylesheet" href="assets/css/demo.css" />
+  <!-- animate loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    #main-content {
+      display: none;
+    }
+
+  </style>
+  <!-- //// -->
+
+
+
+</head>
+<!-- loading -->
+<div id="loading" class="d-flex justify-content-center align-items-center vh-100 absolute">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<!-- loading -->
+
+<body style="font-family: 'Mulish';">
+  <div class="wrapper animate__animated animate__fadeIn" id="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar" style="box-shadow: none;">
+      <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header">
+          <a href="../index.html" class="logo">
+            <img src="../assets/img/logo/noctium.png" alt="navbar brand" class="navbar-brand" style="width: 120px;" />
+          </a>
+          <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+              <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+              <i class="gg-menu-left"></i>
+            </button>
+          </div>
+          <button class="topbar-toggler more">
+            <i class="gg-more-vertical-alt"></i>
+          </button>
+        </div>
+        <!-- End Logo Header -->
+      </div>
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <ul class="nav nav-secondary">
+            <li class="nav-item ">
+              <a href="../index.html">
+                <i><img src="../assets/img/logo/icon/logo_dashboard-removebg-preview.png"
+                    style="width: 20px; vertical-align: baseline; margin-top: 8px;"></i>
+                <p style="font-family: 'Mulish'; font-weight: bolder;">Dashboard</p>
+              </a>
+            </li>
+
+            <li class="nav-item" style="background-color: #f8fafb;">
+              <a data-bs-toggle="collapse" href="#tables">
+                <i><img src="../assets/img/logo/icon/barcode.png"
+                    style="width: 20px; vertical-align: baseline; margin-top: 8px;"></i>
+                <p style="font-family: 'Mulish'; font-weight: bolder;">Products</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav nav-collapse" style="list-style: none;">
+                  <li>
+                    <a href="/tables/datatables.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      PC
+                    </a>
+                  </li>
+                  <li style="font-family: 'Mulish';">
+                    <a href="/tables/periphery.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      Pariphery
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item" style="background-color: #f8fafb;">
+              <a data-bs-toggle="collapse" href="#page">
+                <i><img src="../assets/img/logo/icon/layer.png"
+                    style="width: 25px; vertical-align: baseline; margin-top: 8px;"></i>
+                <p style="font-family: 'Mulish'; font-weight: bolder;">Page</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="page" style="background-color: none;">
+                <ul class="nav nav-collapse" style="list-style: none;">
+                  <li>
+                    <a href="/tables/login.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      Login
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/tables/register.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      Register
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+            <!-- <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#base">
+            <i class="fas fa-layer-group"></i>
+            <p>Base</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="base">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="components/avatars.html">
+                  <span class="sub-item">Avatars</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/buttons.html">
+                  <span class="sub-item">Buttons</span>
+                </a>
+              </li> -->
+            <!-- <li>
+                <a href="components/gridsystem.html">
+                  <span class="sub-item">Grid System</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/panels.html">
+                  <span class="sub-item">Panels</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/notifications.html">
+                  <span class="sub-item">Notifications</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/sweetalert.html">
+                  <span class="sub-item">Sweet Alert</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/font-awesome-icons.html">
+                  <span class="sub-item">Font Awesome Icons</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/simple-line-icons.html">
+                  <span class="sub-item">Simple Line Icons</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/typography.html">
+                  <span class="sub-item">Typography</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#sidebarLayouts">
+            <i class="fas fa-th-list"></i>
+            <p>Sidebar Layouts</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="sidebarLayouts">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="sidebar-style-2.html">
+                  <span class="sub-item">Sidebar Style 2</span>
+                </a>
+              </li>
+              <li>
+                <a href="icon-menu.html">
+                  <span class="sub-item">Icon Menu</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#forms">
+            <i class="fas fa-pen-square"></i>
+            <p>Forms</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="forms">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="forms/forms.html">
+                  <span class="sub-item">Basic Form</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#maps">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Maps</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="maps">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="maps/googlemaps.html">
+                  <span class="sub-item">Google Maps</span>
+                </a>
+              </li>
+              <li>
+                <a href="maps/jsvectormap.html">
+                  <span class="sub-item">Jsvectormap</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#charts">
+            <i class="far fa-chart-bar"></i>
+            <p>Charts</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="charts">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="charts/charts.html">
+                  <span class="sub-item">Chart Js</span>
+                </a>
+              </li>
+              <li>
+                <a href="charts/sparkline.html">
+                  <span class="sub-item">Sparkline</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="widgets.html">
+            <i class="fas fa-desktop"></i>
+            <p>Widgets</p>
+            <span class="badge badge-success">4</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../../documentation/index.html">
+            <i class="fas fa-file"></i>
+            <p>Documentation</p>
+            <span class="badge badge-secondary">1</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#submenu">
+            <i class="fas fa-bars"></i>
+            <p>Menu Levels</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="submenu">
+            <ul class="nav nav-collapse">
+              <li>
+                <a data-bs-toggle="collapse" href="#subnav1">
+                  <span class="sub-item">Level 1</span>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="subnav1">
+                  <ul class="nav nav-collapse subnav">
+                    <li>
+                      <a href="#">
+                        <span class="sub-item">Level 2</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="sub-item">Level 2</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a data-bs-toggle="collapse" href="#subnav2">
+                  <span class="sub-item">Level 1</span>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="subnav2">
+                  <ul class="nav nav-collapse subnav">
+                    <li>
+                      <a href="#">
+                        <span class="sub-item">Level 2</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="sub-item">Level 1</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <div class="logo-header">
+            <a href="../index.html" class="logo">
+              <img src="../assets/img/logo/noctium.png" alt="navbar brand" class="navbar-brand" style="width: 100px;" />
+
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+              <div class="input-group" style="border: none; background: none;">
+                <div class="input-group-prepend">
+                  <button type="submit" class="btn btn-search pe-1">
+                    <img src="/assets/img/searchLogo.png" style=" width: 20px;">
+                  </button>
+                </div>
+                <input type="text" placeholder="Search ..." class="form-control" style="font-family: 'Mulish';" />
+              </div>
+            </nav>
+
+            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+              <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false" aria-haspopup="true">
+                  <i class="fa fa-search"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-search animated fadeIn">
+                  <form class="navbar-left navbar-form nav-search">
+                    <div class="input-group">
+                      <input type="text" placeholder="Search ..." class="form-control" />
+                    </div>
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i><img src="../assets/img/logo/icon/chat.png" style="width: 23px; opacity: .5;"></i>
+                  <span class="notification"
+                    style="background-color: rgb(233, 48, 48); width: 7px; object-fit:cover ; position: absolute; z-index: 1; margin-right: 3px; margin-top: 8px; border: 2px solid white;"></span>
+                </a>
+                <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+                  <li>
+                    <div class="dropdown-title d-flex justify-content-between align-items-center">
+                      Messages
+                      <a href="#" class="small">Mark all as read</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="message-notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="../assets/img/jm_denis.jpg" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Talha</span>
+                            <span class="block"> Hi, Apa Kabar ? </span>
+                            <span class="time">17 minutes ago</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa-regular fa-bell" style="font-size: 25px;"></i>
+                  <span class="notification"
+                    style="background-color: rgb(233, 48, 48); width: 7px; object-fit:cover ; position: absolute; z-index: 1; margin-right: 8px; margin-top: 8px; border: 2px solid white;"></span>
+                </a>
+                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown"
+                  style="width: 500px;">
+                  <li>
+                    <div class="dropdown-title">
+                      You have 1 new notification
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-icon notif"
+                            style="background: none; margin-top: 1px; border-radius: 0; display: block;">
+                            <i class="bi bi-bell" style="font-size: 20px; margin-left: 8px;"></i><br>
+                            <p style="text-align: center;">8:30</p>
+                          </div>
+                          <div class="divider me-4 mt-1 rounded-2"
+                            style="width: 3px; height: 50px; background-color: #fdbf5e;"></div>
+                          <div class="notif-content">
+                            <span class="block"> Meeting with the marketing department </span>
+                            <span class="time">Nov 03 2019 to Nov 04 2019</span>
+                          </div>
+                        </a>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-user dropdown hidden-caret">
+                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                  <div class="avatar-sm">
+                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                  </div>
+                  <span class="profile-username">
+                    <span class="fw-bold" style="font-family: 'Mulish';">Stan Manent <i class="fa-solid fa-sort-down"
+                        style="margin-left: 10px; align-items: center;"></i></span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                  <div class="dropdown-user-scroll scrollbar-outer">
+                    <li>
+                      <div class="user-box">
+                        <div class="avatar-lg">
+                          <img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                          <h4 style="font-family: 'Mulish';">Stan</h4>
+                          <p class="text-muted" style="font-family: 'Mulish';">hello@example.com</p>
+                          <a href="/tables/profile.html" class="btn btn-xs btn-secondary btn-sm"
+                            style="font-family: 'Mulish';">View Profile</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">My Profile</a>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">My Balance</a>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">Inbox</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">Account Setting</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">Logout</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+
+      <div class="container">
+        <div class="page-inner">
+          <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+            <div>
+              <h1 arrowtd class="fw-bold mb-3" style="font-family: 'Mulish'; ">Dashboard</h1>
+              <h6 class="op-7 mb-2" style="font-family: 'Mulish'; ">Noctium Admin Dashboard</h6>
+            </div>
+            <div class="ms-md-auto py-2 py-md-0">
+              <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
+              <a href="#" class="btn btn-primary btn-round">Add Customer</a>
+            </div>
+          </div>
+          <div class="row container d-flex justify-content-center align-items-center min-vh-100 flex-wrap">
+            <div class="card dashboard-card p-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="level-label">Junior +</div>
+                  <div class="progress mt-2 mb-2" style="height: 6px; width: 120px;">
+                    <div class="progress-bar" role="progressbar" id="progress1"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress2"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress3"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress4"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress5"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress6"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress7"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress8"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" id="progress9" style="width: 0%;"></div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="points">138</div>
+                    <div class="points-change ms-2 d-flex align-items-center">
+                      <img src="tables/assets/images/logos/chart2.png" style="width: 40px;" alt="">
+                      <span class="success ms-1"
+                        style="background-color: #00c853; border-radius: 90px; padding: 3px 6px; margin: 0; color: white">20</span>
+                    </div>
+                  </div>
+                  <a href="#" class="detail-link mt-2 d-block">Detail</a>
+                </div>
+                <div class="rating-circle">
+                  <svg width="90" height="90" viewBox="0 0 100 100">
+                    <circle class="background-circle" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress-circle" cx="50" cy="50" r="45"></circle>
+                  </svg>
+                  <div class="rating-value-container">
+                    <div class="rating-value" id="ratingValue1">65</div>
+                    <div class="rating-text">Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card dashboard-card p-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="level-label">Senior +</div>
+                  <div class="progress mt-2 mb-2" style="height: 6px; width: 120px;">
+                    <div class="progress-bar" role="progressbar" id="progress10"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress11"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress12"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress13"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress14"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress15"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress16"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress17"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" id="progress18" style="width: 0%;"></div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="points">200</div>
+                    <div class="points-change ms-2 d-flex align-items-center">
+                      <img src="tables/assets/images/logos/chart2.png" style="width: 40px;" alt="">
+                      <span class="success ms-1"
+                        style="background-color: #00c853; border-radius: 90px; padding: 3px 6px; margin: 0; color: white;">35</span>
+                    </div>
+                  </div>
+                  <a href="#" class="detail-link mt-2 d-block">Detail</a>
+                </div>
+                <div class="rating-circle">
+                  <svg width="90" height="90" viewBox="0 0 100 100">
+                    <circle class="background-circle" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress-circle" cx="50" cy="50" r="45"></circle>
+                  </svg>
+                  <div class="rating-value-container">
+                    <div class="rating-value" id="ratingValue1">80</div>
+                    <div class="rating-text">Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card dashboard-card p-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="level-label">Intermediate</div>
+                  <div class="progress mt-2 mb-2" style="height: 6px; width: 120px;">
+                    <div class="progress-bar" role="progressbar" id="progress19"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress20"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress21"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress22"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress23"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress24"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress25"
+                      style="width: 0%; background-color: #1d4ed8; border-radius: 1px;"></div>
+                    <div class="progress-bar" role="progressbar" id="progress26"
+                      style="width: 0%; background-color: #ffffff;"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" id="progress27" style="width: 0%;"></div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="points">300</div>
+                    <div class="points-change ms-2 d-flex align-items-center">
+                      <img src="tables/assets/images/logos/chart2.png" style="width: 40px;" alt="">
+                      <span class="success ms-1"
+                        style="background-color: #00c853; border-radius: 90px; padding: 3px 6px; margin: 0; color: white;">50</span>
+                    </div>
+                  </div>
+                  <a href="#" class="detail-link mt-2 d-block">Detail</a>
+                </div>
+                <div class="rating-circle">
+                  <svg width="90" height="90" viewBox="0 0 100 100">
+                    <circle class="background-circle" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress-circle" cx="50" cy="50" r="45"></circle>
+                  </svg>
+                  <div class="rating-value-container">
+                    <div class="rating-value" id="ratingValue1">90</div>
+                    <div class="rating-text">Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-sm-6 col-md-3">
+              <div class="card card-stats card-round">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-icon">
+                      <div class="icon-big text-center icon-primary bubble-shadow-small">
+                        <i class="fas fa-users"></i>
+                      </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                      <div class="numbers">
+                        <p class="card-category">Visitors</p>
+                        <h4 class="card-title">1,294</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card card-stats card-round">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-icon">
+                      <div class="icon-big text-center icon-info bubble-shadow-small">
+                        <i class="fas fa-user-check"></i>
+                      </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                      <div class="numbers">
+                        <p class="card-category">Subscribers</p>
+                        <h4 class="card-title">1303</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card card-stats card-round">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-icon">
+                      <div class="icon-big text-center icon-success bubble-shadow-small">
+                        <i class="fas fa-luggage-cart"></i>
+                      </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                      <div class="numbers">
+                        <p class="card-category">Sales</p>
+                        <h4 class="card-title">$ 1,345</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card card-stats card-round">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-icon">
+                      <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                        <i class="far fa-check-circle"></i>
+                      </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                      <div class="numbers">
+                        <p class="card-category">Order</p>
+                        <h4 class="card-title">576</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">User Statistics</div>
+                      <div class="card-tools">
+                        <a href="#" class="btn btn-label-success btn-round btn-sm me-2">
+                          <span class="btn-label">
+                            <i class="fa fa-pencil"></i>
+                          </span>
+                          Export
+                        </a>
+                        <a href="#" class="btn btn-label-info btn-round btn-sm">
+                          <span class="btn-label">
+                            <i class="fa fa-print"></i>
+                          </span>
+                          Print
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 375px">
+                      <canvas id="statisticsChart"></canvas>
+                    </div>
+                    <div id="myChartLegend"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-primary card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Daily Sales</div>
+                      <div class="card-tools">
+                        <div class="dropdown">
+                          <button class="btn btn-sm btn-label-light dropdown-toggle" type="button"
+                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Export
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-category">March 25 - April 02</div>
+                  </div>
+                  <div class="card-body pb-0">
+                    <div class="mb-4 mt-2">
+                      <h1>$4,578.58</h1>
+                    </div>
+                    <div class="pull-in">
+                      <canvas id="dailySalesChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-round">
+                  <div class="card-body pb-0">
+                    <div class="h1 fw-bold float-end text-primary">+5%</div>
+                    <h2 class="mb-2">17</h2>
+                    <p class="text-muted">Users online</p>
+                    <div class="pull-in sparkline-fix">
+                      <div id="lineChart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-12">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row card-tools-still-right">
+                      <h4 class="card-title">Users Geolocation</h4>
+                      <div class="card-tools">
+                        <button class="btn btn-icon btn-link btn-primary btn-xs">
+                          <span class="fa fa-angle-down"></span>
+                        </button>
+                        <button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card">
+                          <span class="fa fa-sync-alt"></span>
+                        </button>
+                        <button class="btn btn-icon btn-link btn-primary btn-xs">
+                          <span class="fa fa-times"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <p class="card-category">
+                      Map of the distribution of users around the world
+                    </p>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="table-responsive table-hover table-sales">
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="flag">
+                                    <img src="assets/img/flags/id.png" alt="indonesia" />
+                                  </div>
+                                </td>
+                                <td>Indonesia</td>
+                                <td class="text-end">2.320</td>
+                                <td class="text-end">42.18%</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="flag">
+                                    <img src="assets/img/flags/us.png" alt="united states" />
+                                  </div>
+                                </td>
+                                <td>USA</td>
+                                <td class="text-end">240</td>
+                                <td class="text-end">4.36%</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="flag">
+                                    <img src="assets/img/flags/au.png" alt="australia" />
+                                  </div>
+                                </td>
+                                <td>Australia</td>
+                                <td class="text-end">119</td>
+                                <td class="text-end">2.16%</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="flag">
+                                    <img src="assets/img/flags/ru.png" alt="russia" />
+                                  </div>
+                                </td>
+                                <td>Russia</td>
+                                <td class="text-end">1.081</td>
+                                <td class="text-end">19.65%</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="flag">
+                                    <img src="assets/img/flags/cn.png" alt="china" />
+                                  </div>
+                                </td>
+                                <td>China</td>
+                                <td class="text-end">1.100</td>
+                                <td class="text-end">20%</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="flag">
+                                    <img src="assets/img/flags/br.png" alt="brazil" />
+                                  </div>
+                                </td>
+                                <td>Brasil</td>
+                                <td class="text-end">640</td>
+                                <td class="text-end">11.63%</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="mapcontainer">
+                          <div id="world-map" class="w-100" style="height: 300px"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/kaiadmin.min.js"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="assets/js/setting-demo.js"></script>
+    <script src="assets/js/demo.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script> -->
+
+    <script>
+      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#177dff",
+        fillColor: "rgba(23, 125, 255, 0.14)",
+      });
+
+      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#f3545d",
+        fillColor: "rgba(243, 84, 93, .14)",
+      });
+
+      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#ffa534",
+        fillColor: "rgba(255, 165, 52, .14)",
+      });
+
+
+      // loading
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Simulasikan waktu loading dengan setTimeout
+        setTimeout(function () {
+          // Hilangkan elemen loading
+          var loading = document.getElementById('loading');
+          loading.parentNode.removeChild(loading);
+
+          // Tampilkan konten utama dengan menambahkan kelas animasi
+          var mainContent = document.getElementById('main-content');
+          mainContent.style.display = 'block';
+          mainContent.classList.add('animate__animated', 'animate__fadeIn');
+
+          // Hapus kelas animasi setelah animasi selesai
+          mainContent.addEventListener('animationend', function () {
+            mainContent.classList.remove('animate__animated', 'animate__fadeIn');
+          });
+        }, 1500); // Waktu dalam milidetik
+      });
+
+
+      window.onload = function () {
+        // Animasi untuk kartu pertama
+        document.getElementById('progress1').style.width = '30%';
+        document.getElementById('progress2').style.width = '2%';
+        document.getElementById('progress3').style.width = '30%';
+        document.getElementById('progress4').style.width = '2%';
+        document.getElementById('progress5').style.width = '30%';
+        document.getElementById('progress6').style.width = '2%';
+        document.getElementById('progress7').style.width = '30%';
+        document.getElementById('progress8').style.width = '2%';
+        document.getElementById('progress9').style.width = '50%';
+
+        var ratingValue1 = 65;
+        var progressCircle1 = document.querySelectorAll('.progress-circle')[0];
+        var radius1 = progressCircle1.r.baseVal.value;
+        var circumference1 = 2 * Math.PI * radius1;
+        var offset1 = circumference1 - (ratingValue1 / 100) * circumference1;
+
+        progressCircle1.style.strokeDashoffset = offset1;
+
+        // Animasi untuk kartu kedua
+        document.getElementById('progress10').style.width = '30%';
+        document.getElementById('progress11').style.width = '2%';
+        document.getElementById('progress12').style.width = '30%';
+        document.getElementById('progress13').style.width = '2%';
+        document.getElementById('progress14').style.width = '30%';
+        document.getElementById('progress15').style.width = '2%';
+        document.getElementById('progress16').style.width = '30%';
+        document.getElementById('progress17').style.width = '2%';
+        document.getElementById('progress18').style.width = '50%';
+
+        var ratingValue2 = 80;
+        var progressCircle2 = document.querySelectorAll('.progress-circle')[1];
+        var radius2 = progressCircle2.r.baseVal.value;
+        var circumference2 = 2 * Math.PI * radius2;
+        var offset2 = circumference2 - (ratingValue2 / 100) * circumference2;
+
+        progressCircle2.style.strokeDashoffset = offset2;
+
+        // Animasi untuk kartu ketiga
+        document.getElementById('progress19').style.width = '30%';
+        document.getElementById('progress20').style.width = '2%';
+        document.getElementById('progress21').style.width = '30%';
+        document.getElementById('progress22').style.width = '2%';
+        document.getElementById('progress23').style.width = '30%';
+        document.getElementById('progress24').style.width = '2%';
+        document.getElementById('progress25').style.width = '30%';
+        document.getElementById('progress26').style.width = '2%';
+        document.getElementById('progress27').style.width = '50%';
+
+        var ratingValue3 = 90;
+        var progressCircle3 = document.querySelectorAll('.progress-circle')[2];
+        var radius3 = progressCircle3.r.baseVal.value;
+        var circumference3 = 2 * Math.PI * radius3;
+        var offset3 = circumference3 - (ratingValue3 / 100) * circumference3;
+
+        progressCircle3.style.strokeDashoffset = offset3;
+      };
+    </script>
+</body>
+
+</html>

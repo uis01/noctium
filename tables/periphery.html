@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>PC - Kaiadmin Bootstrap 5 Admin Dashboard</title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="icon" href="../assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Fonts and icons -->
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<!-- mulis -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- mulis -->
+
+  <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+  <script>
+    WebFont.load({
+      google: { families: ["Public Sans:300,400,500,600,700"] },
+      custom: {
+        families: [
+          "Font Awesome 5 Solid",
+          "Font Awesome 5 Regular",
+          "Font Awesome 5 Brands",
+          "simple-line-icons",
+        ],
+        urls: ["../assets/css/fonts.min.css"],
+      },
+      active: function () {
+        sessionStorage.fonts = true;
+      },
+    });
+  </script>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+  <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+  <link rel="stylesheet" href="../assets/css/periphery.css">
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <!-- animate loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+      #main-content {
+          display: none;
+      }
+  </style>
+</head>
+
+<body>
+  <!-- loading -->
+  <div id="loading" class="d-flex justify-content-center align-items-center vh-100 absolute">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- loading -->
+  <div class="wrapper animate__animated animate__fadeIn" id="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar" style="box-shadow: none;">
+      <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header">
+          <a href="../index.html" class="logo">
+            <img src="../assets/img/logo/noctium.png" alt="navbar brand" class="navbar-brand" style="width: 120px;" />
+          </a>
+          <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+              <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+              <i class="gg-menu-left"></i>
+            </button>
+          </div>
+          <button class="topbar-toggler more">
+            <i class="gg-more-vertical-alt"></i>
+          </button>
+        </div>
+        <!-- End Logo Header -->
+      </div>
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <ul class="nav nav-secondary">
+            <li class="nav-item ">
+              <a href="../index.html">
+                <i><img src="../assets/img/logo/icon/logo_dashboard-removebg-preview.png" style="width: 20px; vertical-align: baseline; margin-top: 8px;"></i>
+                <p style="font-family: 'Mulish'; font-weight: bolder;">Dashboard</p>
+              </a>
+            </li>
+
+            <li class="nav-item" style="background-color: #f8fafb;">
+              <a data-bs-toggle="collapse" href="#tables">
+                <i><img src="../assets/img/logo/icon/barcode.png" style="width: 20px; vertical-align: baseline; margin-top: 8px;"></i>
+                <p style="font-family: 'Mulish'; font-weight: bolder;">Products</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav nav-collapse" style="list-style: none;">
+                  <li>
+                    <a href="datatables.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      PC
+                    </a>
+                  </li>
+                  <li>
+                    <a href="periphery.html" style="color: #1e60e1; font-family: 'Mulish';"><i class="bi bi-record-fill" style="color: #1e60e1;"></i>
+                      Periphery
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item" style="background-color: #f8fafb;">
+              <a data-bs-toggle="collapse" href="#page" >
+                <i><img src="../assets/img/logo/icon/layer.png" style="width: 25px; vertical-align: baseline; margin-top: 8px;"></i>
+                <p style="font-family: 'Mulish'; font-weight: bolder;">Page</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="page" style="background-color: none;">
+                <ul class="nav nav-collapse" style="list-style: none;">
+                  <li>
+                    <a href="login.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      Login
+                    </a>
+                  </li>
+                  <li>
+                    <a href="register.html" style="font-family: 'Mulish';"><i class="bi bi-record-fill"></i>
+                      Register
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+            <!-- <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#base">
+            <i class="fas fa-layer-group"></i>
+            <p>Base</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="base">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="components/avatars.html">
+                  <span class="sub-item">Avatars</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/buttons.html">
+                  <span class="sub-item">Buttons</span>
+                </a>
+              </li> -->
+              <!-- <li>
+                <a href="components/gridsystem.html">
+                  <span class="sub-item">Grid System</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/panels.html">
+                  <span class="sub-item">Panels</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/notifications.html">
+                  <span class="sub-item">Notifications</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/sweetalert.html">
+                  <span class="sub-item">Sweet Alert</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/font-awesome-icons.html">
+                  <span class="sub-item">Font Awesome Icons</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/simple-line-icons.html">
+                  <span class="sub-item">Simple Line Icons</span>
+                </a>
+              </li>
+              <li>
+                <a href="components/typography.html">
+                  <span class="sub-item">Typography</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#sidebarLayouts">
+            <i class="fas fa-th-list"></i>
+            <p>Sidebar Layouts</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="sidebarLayouts">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="sidebar-style-2.html">
+                  <span class="sub-item">Sidebar Style 2</span>
+                </a>
+              </li>
+              <li>
+                <a href="icon-menu.html">
+                  <span class="sub-item">Icon Menu</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#forms">
+            <i class="fas fa-pen-square"></i>
+            <p>Forms</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="forms">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="forms/forms.html">
+                  <span class="sub-item">Basic Form</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#maps">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Maps</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="maps">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="maps/googlemaps.html">
+                  <span class="sub-item">Google Maps</span>
+                </a>
+              </li>
+              <li>
+                <a href="maps/jsvectormap.html">
+                  <span class="sub-item">Jsvectormap</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#charts">
+            <i class="far fa-chart-bar"></i>
+            <p>Charts</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="charts">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="charts/charts.html">
+                  <span class="sub-item">Chart Js</span>
+                </a>
+              </li>
+              <li>
+                <a href="charts/sparkline.html">
+                  <span class="sub-item">Sparkline</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="widgets.html">
+            <i class="fas fa-desktop"></i>
+            <p>Widgets</p>
+            <span class="badge badge-success">4</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../../documentation/index.html">
+            <i class="fas fa-file"></i>
+            <p>Documentation</p>
+            <span class="badge badge-secondary">1</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#submenu">
+            <i class="fas fa-bars"></i>
+            <p>Menu Levels</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="submenu">
+            <ul class="nav nav-collapse">
+              <li>
+                <a data-bs-toggle="collapse" href="#subnav1">
+                  <span class="sub-item">Level 1</span>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="subnav1">
+                  <ul class="nav nav-collapse subnav">
+                    <li>
+                      <a href="#">
+                        <span class="sub-item">Level 2</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="sub-item">Level 2</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a data-bs-toggle="collapse" href="#subnav2">
+                  <span class="sub-item">Level 1</span>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="subnav2">
+                  <ul class="nav nav-collapse subnav">
+                    <li>
+                      <a href="#">
+                        <span class="sub-item">Level 2</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="sub-item">Level 1</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <div class="logo-header">
+            <a href="../index.html" class="logo">
+              <img src="../assets/img/logo/noctium.png" alt="navbar brand" class="navbar-brand" style="width: 100px;" />
+
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+              <div class="input-group" style="border: none; background: none;">
+                <div class="input-group-prepend">
+                  <button type="submit" class="btn btn-search pe-1">
+                    <img src="/assets/img/searchLogo.png" style=" width: 20px;">
+                  </button>
+                </div>
+                <input type="text" placeholder="Search ..." class="form-control" style="font-family: 'Mulish';" />
+              </div>
+            </nav>
+
+            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+              <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false" aria-haspopup="true">
+                  <i class="fa fa-search"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-search animated fadeIn">
+                  <form class="navbar-left navbar-form nav-search">
+                    <div class="input-group">
+                      <input type="text" placeholder="Search ..." class="form-control" />
+                    </div>
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i><img src="../assets/img/logo/icon/chat.png" style="width: 23px; opacity: .5;"></i>
+                  <span class="notification"
+                    style="background-color: rgb(233, 48, 48); width: 7px; object-fit:cover ; position: absolute; z-index: 1; margin-right: 3px; margin-top: 8px; border: 2px solid white;"></span>
+                </a>
+                <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+                  <li>
+                    <div class="dropdown-title d-flex justify-content-between align-items-center">
+                      Messages
+                      <a href="#" class="small">Mark all as read</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="message-notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="../assets/img/jm_denis.jpg" alt="Img Profile" />
+                          </div>
+                          <!--  -->
+                          <!-- <div class="notif-content">
+                            <span class="subject">Jimmy Denis</span>
+                            <span class="block"> How are you ? </span>
+                            <span class="time">5 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="../assets/img/chadengle.jpg" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Chad</span>
+                            <span class="block"> Ok, Thanks ! </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="../assets/img/mlane.jpg" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="subject">Jhon Doe</span>
+                            <span class="block">
+                              Ready for the meeting today...
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="../assets/img/talha.jpg" alt="Img Profile" />
+                          </div> -->
+                          <!--  -->
+
+
+                          <div class="notif-content">
+                            <span class="subject">Talha</span>
+                            <span class="block"> Hi, Apa Kabar ? </span>
+                            <span class="time">17 minutes ago</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa-regular fa-bell" style="font-size: 25px;"></i>
+                  <span class="notification"
+                    style="background-color: rgb(233, 48, 48); width: 7px; object-fit:cover ; position: absolute; z-index: 1; margin-right: 8px; margin-top: 8px; border: 2px solid white;"></span>
+                </a>
+                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                  <li>
+                    <div class="dropdown-title">
+                      You have 1 new notification
+                    </div>
+                  </li>
+                  <li>
+                    <div class="notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-icon notif-primary">
+                            <i class="fa fa-user-plus"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> New user registered </span>
+                            <span class="time">5 minutes ago</span>
+                          </div>
+                        </a>
+                        <!--  -->
+                        <!-- <a href="#">
+                          <div class="notif-icon notif-success">
+                            <i class="fa fa-comment"></i>
+                          </div>
+                          
+                          <div class="notif-content">
+                            <span class="block">
+                              Rahmad commented on Admin
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="../assets/img/profile2.jpg" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="block">
+                              Reza send messages to you
+                            </span>
+                            <span class="time">12 minutes ago</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-icon notif-danger">
+                            <i class="fa fa-heart"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> Farrah liked Admin </span>
+                            <span class="time">17 minutes ago</span>
+                          </div> -->
+                        <!--  -->
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-user dropdown hidden-caret">
+                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                  <div class="avatar-sm">
+                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                  </div>
+                  <span class="profile-username">
+                    <span class="fw-bold" style="font-family: 'Mulish';">Stan Manent <i class="fa-solid fa-sort-down"
+                        style="margin-left: 10px; align-items: center;"></i></span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                  <div class="dropdown-user-scroll scrollbar-outer">
+                    <li>
+                      <div class="user-box">
+                        <div class="avatar-lg">
+                          <img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                          <h4 style="font-family: 'Mulish';">Stan</h4>
+                          <p class="text-muted" style="font-family: 'Mulish';">hello@example.com</p>
+                          <a href="profile.html" class="btn btn-xs btn-secondary btn-sm"
+                            style="font-family: 'Mulish';">View Profile</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">My Profile</a>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">My Balance</a>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">Inbox</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">Account Setting</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#" style="font-family: 'Mulish';">Logout</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+
+      <div class="container">
+        <div class="page-inner">
+
+
+          <div style="display: flex; margin-top: 15px;">
+            <h1 arrowtd class="fw-bold mb-3" style="font-family: 'Mulish'; ">PERIPHERY</h1>
+            <div style="position: absolute; z-index: 1; right: 0; margin-right: 10px;">
+              <ul style="list-style: none; display: flex;">
+                <li style="display: flex; align-items: center;">
+                  <span style="margin: 0 8px; background-color: #ceceda; border-radius: 100px; padding: 12px; opacity: .5; display: flex; align-items: center;">
+                    <img src="../assets/img/logo/icon/printer.png" style="width: 15px; opacity: .6;">
+                  </span>
+                </li>
+                
+                <li style="display: flex; align-items: center;">
+                  <span style="margin: 0 8px; background-color: #ceceda; border-radius: 100px; padding: 12px; opacity: .5; display: flex; align-items: center;">
+                    <img src="../assets/img/logo/icon/unduh.png" style="width: 15px; opacity: .6;">
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <div class="page-header">
+            <ul class="breadcrumbs" style="margin-left: 0; padding-left: 0;">
+              <li class="nav-home">
+                <a href="#">
+                  <i><img src="../assets/img/logo/icon/home.png" style="width: 15px; opacity: .4;"></i>
+                </a>
+              </li>
+              <li class="separator">
+                <i class="icon-arrow-right"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#" style="font-family: 'Mulish';">PRODUCT</a>
+              </li>
+              <li class="separator">
+                <i class="icon-arrow-right"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#" style="font-family: 'Mulish';">PERIPHERY</a>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="filter-container">
+              <!--  -->
+              <ul class="sortby" style="font-weight: bolder; font-family: 'Mulish';">
+                <li class="label">Show</li>
+                <li>
+                  <div class="dropdown" style="background-color: white; border-radius: 10px;">
+                    <button class="btn dropdown-button-fixed-width2" type="button" id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-family: 'Mulish';">
+                      10 <span class="chevron"><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="min-width: 70px;">
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton1')"
+                          style="font-family: 'Mulish';">10</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton1')"
+                          style="font-family: 'Mulish';">25</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton1')"
+                          style="font-family: 'Mulish';">50</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton1')"
+                          style="font-family: 'Mulish';">100</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="dropdown" style="background-color: white; border-radius: 10px;">
+                    <button class="btn dropdown-button-fixed-width" type="button" id="dropdownMenuButton2"
+                      data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-family: 'Mulish';">
+                      Categories <span class="chevron"><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton2')"
+                          style="font-family: 'Mulish';">All Categories</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton2')"
+                          style="font-family: 'Mulish';">Categories 1</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton2')"
+                          style="font-family: 'Mulish';">Categories 2</a></li>
+                    </ul>
+                  </div>
+
+                </li>
+                <li>
+                  <div class="dropdown" style="background-color: white; border-radius: 10px;">
+                    <button class="btn dropdown-button-fixed-width3" type="button" id="dropdownMenuButton3"
+                      data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold; font-family: 'Mulish';">
+                      All Status <span class="chevron"><i class="bi bi-chevron-down"></i></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3" style="min-width: 120px;">
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton3')"
+                          style="font-family: 'Mulish';">Status1</a></li>
+                      <li><a class="dropdown-item" href="#" onclick="changeDropdownText(this, 'dropdownMenuButton3')"
+                          style="font-family: 'Mulish';">Status2</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+
+              <!--  -->
+              <ul class="nav-search">
+                <li class="input-group"
+                  style="border: none; padding: 0 10px; background-color: white; border-radius: 10px;">
+                  <div class="input-group-prepend">
+                    <img src="/assets/img/searchLogo.png" alt="Search" class="search-icon">
+                  </div>
+                  <input type="text" placeholder="Search Periphery" class="form-control"
+                    style="font-family: 'Mulish';" />
+                </li>
+                <button class="search-button" style="font-family: 'Mulish';">Go</button>
+              </ul>
+
+
+
+              
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card" style="box-shadow: none;">
+              <div class="card-body">
+                <div class="table-responsive">
+
+                  <table id="basic-PC" data-sortOrder="asc" data-sortColumn="-1" class="display table table-hover">
+                    <thead>
+                      <tr>
+                          <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
+                          <th onclick="sortTable(1)" style="text-transform: capitalize; font-size: 15px;">
+                              Name <span class="sort-indicator" id="indicator-1"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                          <th onclick="sortTable(2)" style="text-transform: capitalize; font-size: 15px;">
+                              Type <span class="sort-indicator" id="indicator-2"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                          <th onclick="sortTable(3)" style="text-transform: capitalize; font-size: 15px;">
+                              Price <span class="sort-indicator" id="indicator-3"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                          <th onclick="sortTable(4)" style="text-transform: capitalize; font-size: 15px;">
+                              Brand <span class="sort-indicator" id="indicator-4"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                          <th onclick="sortTable(5)" style="text-transform: capitalize; font-size: 15px;">
+                              Compatibility <span class="sort-indicator" id="indicator-5"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                          <th onclick="sortTable(6)" style="text-transform: capitalize; font-size: 15px;">
+                              Stock <span class="sort-indicator" id="indicator-6"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                          <th onclick="sortTable(7)" style="text-transform: capitalize; font-size: 15px;">
+                              Description <span class="sort-indicator" id="indicator-7"><i class="fa-solid fa-sort-down"></i></span>
+                          </th>
+                      </tr>
+                  </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox" name="selectRow" value=""></td>
+                        <td>Logitech MX Master 3</td>
+                        <td>Mouse</td>
+                        <td>$100</td>
+                        <td>Logitech</td>
+                        <td>Windows, macOS</td>
+                        <td>30</td>
+                        <td>Wireless mouse with customizable buttons</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" name="selectRow" value=""></td>
+                        <td>Razer BlackWidow V3</td>
+                        <td>Keyboard</td>
+                        <td>$130</td>
+                        <td>Razer</td>
+                        <td>Windows</td>
+                        <td>25</td>
+                        <td>Mechanical keyboard with RGB backlighting</td>
+                      </tr><tr>
+                        <td><input type="checkbox" name="selectRow" value=""></td>
+                        <td>Dell UltraSharp U2720Q</td>
+                        <td>Monitor</td>
+                        <td>$600</td>
+                        <td>Dell</td>
+                        <td>Windows, macOS, HDMI</td>
+                        <td>15</td>
+                        <td>27-inch 4K monitor with USB-C connectivity</td>
+                      </tr><tr>
+                        <td><input type="checkbox" name="selectRow" value=""></td>
+                        <td>Bose QuietComfort 35 II</td>
+                        <td>Headphones</td>
+                        <td>$300</td>
+                        <td>Bose</td>
+                        <td>Windows, macOS, Bluetooth</td>
+                        <td>20</td>
+                        <td>Noise-cancelling wireless headphones</td>
+                      </tr><tr>
+                        <td><input type="checkbox" name="selectRow" value=""></td>
+                        <td>Logitech C920</td>
+                        <td>Webcam</td>
+                        <td>$80</td>
+                        <td>Logitech</td>
+                        <td>Windows, macOS, USB</td>
+                        <td>40</td>
+                        <td>Full HD webcam with built-in microphone</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- End Custom template -->
+  </div>
+  <!--   Core JS Files   -->
+
+  <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <!-- jQuery Scrollbar -->
+  <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+  <!-- PC -->
+  <!-- <script src="../assets/js/plugin/datatables/datatables.min.js"></script> -->
+  <!-- Kaiadmin JS -->
+  <script src="../assets/js/kaiadmin.min.js"></script>
+  <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/setting-demo2.js"></script>
+  <script src="../assets/js/tables.js"></script>
+
+  <script>
+
+// sort
+
+function sortTable(columnIndex) {
+    const table = document.getElementById('basic-PC');
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    const isAscending = table.dataset.sortOrder === 'asc';
+    const currentSortColumn = table.dataset.sortColumn;
+
+    // Reset indikator pengurutan
+    document.querySelectorAll('.sort-indicator i').forEach(icon => {
+        icon.classList.remove('fa-sort-up', 'fa-sort-down');
+        icon.classList.add('fa-sort-down');
+    });
+
+    // Atur ulang urutan pengurutan jika kolom yang sama di-klik
+    if (currentSortColumn == columnIndex) {
+        table.dataset.sortOrder = isAscending ? 'desc' : 'asc';
+    } else {
+        table.dataset.sortOrder = 'asc';
+    }
+
+    table.dataset.sortColumn = columnIndex;
+
+    rows.sort((rowA, rowB) => {
+        let cellA = rowA.children[columnIndex].innerText;
+        let cellB = rowB.children[columnIndex].innerText;
+
+        // Mengurutkan kolom harga berdasarkan nilai numerik
+        if (columnIndex === 3) {
+            cellA = parseFloat(cellA.replace('$', '').replace(',', ''));
+            cellB = parseFloat(cellB.replace('$', '').replace(',', ''));
+            return (cellA - cellB) * (table.dataset.sortOrder === 'asc' ? 1 : -1);
+        }
+
+        return cellA.localeCompare(cellB) * (table.dataset.sortOrder === 'asc' ? 1 : -1);
+    });
+
+    rows.forEach(row => table.querySelector('tbody').appendChild(row));
+
+    // Atur indikator pengurutan yang sesuai
+    const indicator = document.querySelector('#indicator-' + columnIndex + ' i');
+    if (table.dataset.sortOrder === 'asc') {
+        indicator.classList.remove('fa-sort-down');
+        indicator.classList.add('fa-sort-up');
+    } else {
+        indicator.classList.remove('fa-sort-up');
+        indicator.classList.add('fa-sort-down');
+    }
+}
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Simulasikan waktu loading dengan setTimeout
+        setTimeout(function() {
+            // Hilangkan elemen loading
+            var loading = document.getElementById('loading');
+            loading.parentNode.removeChild(loading);
+            
+            // Tampilkan konten utama dengan menambahkan kelas animasi
+            var mainContent = document.getElementById('main-content');
+            mainContent.style.display = 'block';
+            mainContent.classList.add('animate__animated', 'animate__fadeIn');
+
+            // Hapus kelas animasi setelah animasi selesai
+            mainContent.addEventListener('animationend', function() {
+                mainContent.classList.remove('animate__animated', 'animate__fadeIn');
+            });
+        }, 1500); // Waktu dalam milidetik
+    });
+</script>
+</body>
+
+</html>
